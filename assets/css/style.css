@@ -3,7 +3,7 @@
 
 /* ===== VARIABLES CSS ===== */
 :root{
-	--header-height: 4rem;
+	--header-height: 3.5rem;
 
 	/* ===== Colors ===== */
 	--body-color: hsl(220, 18%, 99%);
@@ -1043,7 +1043,7 @@ img{
 	/* ===== HOME ===== */
    .home__content{
       padding: 2rem 0 1rem;
-      row-gap: 6rem;
+      grid-row-gap: 6rem;
    }
    .home__description{
       font-size: var(--small-font-size);
@@ -1061,6 +1061,26 @@ img{
    /* ===== end home ===== */
 }
 
+@media screen and (max-width: 403px){
+	/* ===== HOME ===== */
+	.home__images img:nth-child(1){
+		width: 200px;
+		top: -7rem;
+		right: -.5rem;
+	}
+	.home__images img:nth-child(2){
+		width: 156px;
+	}
+	/* ===== end home ===== */
+}
+
+@media screen and (max-width: 500px){
+	/* ===== CONTACT ===== */
+	.contact__input-group{
+		grid-template-columns: repeat(1, 1fr);
+	}
+	/* ===== end contact ===== */
+}
 /* For medium devices */
 @media screen and (min-width: 576px){
 	/* ===== FEATURED ===== */
@@ -1109,7 +1129,7 @@ img{
 
 	/* ===== NAV ===== */
    .nav{
-      height: calc(var(--header-height) + 1rem);
+      height: calc(var(--header-height) + 1.5rem);
    }
    .nav__menu{
       margin-left: auto;
@@ -1150,7 +1170,7 @@ img{
           grid-template-columns: repeat(2, max-content);
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
-              justify-content: space-between;
+              justify-content: space-around;
    }
    .home__images{
       margin-top: 6rem;
@@ -1212,6 +1232,14 @@ img{
 		font-size: var(--h2-font-size);
 	}
 	/* ===== end reusable css classes ===== */
+
+	/* ===== HOME ===== */
+	.home__content{
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-evenly;
+   }
+   /* ===== end home ===== */
 
 	/* ===== FEATURED ===== */
 	.featured__container{
@@ -1279,13 +1307,14 @@ img{
 	}
 	/* ===== end story ===== */
 }
+
 @media screen and (min-width: 1124px){
 	/* ===== HOME ===== */
    .home__content{
       padding: 10rem 0 3rem;
-      -webkit-column-gap: 0;
-         -moz-column-gap: 0;
-              column-gap: 0;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
    }
    .home__images{
       width: 500px;
