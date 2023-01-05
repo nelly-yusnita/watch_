@@ -155,6 +155,15 @@ const blogSwiper = new Swiper('.blog__container', {
 });
 // ===== end blog carousel ===== //
 
+// ===== SCROLL UP ===== //
+function scrollUp(){
+   const scrollUp = document.getElementById('scroll-up');
+
+   if(this.scrollY >= 350) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp);
+// ===== end scroll up ===== //
+
 // ===== SCROLL REVEAL ANIMATION ===== //
 const sr = ScrollReveal({
    origin: 'top',
@@ -168,3 +177,4 @@ sr.reveal(`.section__title, .product__container, .google__map-box, .blog__contai
 sr.reveal(`.featured__card, .footer__content`, {interval: 100})
 sr.reveal(`.story__data, .contact__information`, {origin: 'right'})
 sr.reveal(`.story__images, .contact__form`, {origin: 'left'})
+// ===== end scroll reveal animation ===== //
